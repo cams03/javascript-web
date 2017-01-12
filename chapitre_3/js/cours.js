@@ -83,7 +83,7 @@ document.getElementById('langages').insertAdjacentHTML("afterBegin",
 
 /*Remplacer un noeud existant
 
-Le remplacement d'un élément du DOM par un autre s'effectue au moyen de la méthode replaceChild. Celle-ci remplace un nœud enfant de l'élément courant par un autre nœud.﻿Elle prend en paramètres (dans cet ordre) le nouveau noeud et celui qui est remplacé.﻿﻿
+Le remplacement d'un élément du DOM par un autre s'effectue au moyen de la méthode replaceChild. Celle-ci remplace un nœud enfant de l'élément courant par un autre nœud.Elle prend en paramètres (dans cet ordre) le nouveau noeud et celui qui est remplacé.
 
 L'exemple ci-dessous permet de remplacer le langage Perl par un nouvel élément correspondant au langage Bash.*/
 
@@ -99,3 +99,12 @@ Enfin, il est possible de supprimer un noeud à l'aide de la méthode removeChil
 
 // Suppression de l'élément identifié par "bash"
 document.getElementById("langages").removeChild(document.getElementById("bash"));
+
+var parElt = document.createElement("p");
+var lienElt = document.createElement("a");
+lienElt.href = " https://fr.wikipedia.org/wiki/Liste_des_langages_de_programmation";
+lienElt.textContent = " liste";
+parElt.appendChild(document.createTextNode("En voici une "));
+parElt.appendChild(lienElt);
+parElt.appendChild(document.createTextNode(" plus complète"));
+document.getElementById("contenu").appendChild(parElt);
