@@ -93,3 +93,35 @@ document.addEventListener("click", infosSouris);
 // Gestion de l'appui et du relâchement d'un bouton de la souris
 document.addEventListener("mousedown", infosSouris);
 document.addEventListener("mouseup", infosSouris);
+
+/*Fin du chargement de la page web
+
+En fonction de sa complexité, une page web peut mettre un certain temps à être entièrement chargée par un navigateur. Il est possible de détecter à la fin du chargement de la page en ajoutant un gestionnaire pour l'événement load sur l'objet window, qui représente la fenêtre du navigateur. Cela permet d'éviter d'interagir via JavaScript avec des parties de la page non encore chargées.
+
+L'exemple de code suivant affiche un message dans la console lorsque la page web est entièrement chargée.*/
+
+// Gestion de la fin du chargement de la page web
+window.addEventListener("load", function () {
+    console.log("Page entièrement chargée");
+});
+
+/*Fermeture de la page web
+
+On peut parfois vouloir détecter la fermeture d'une page web, qui se produit lorsque l'utilisateur ferme l'onglet qui l'affiche ou navigue vers une autre page dans cet onglet. Un cas d'utilisation fréquent consiste à afficher une demande de confirmation. Pour cela, il faut ajouter un gestionnaire pour l'événement beforeunload sur l'objet window, comme dans l'exemple suivant.*/
+
+// Gestion de la fermeture de la page web
+window.addEventListener("beforeunload", function (e) {
+    var message = "On est bien ici !";
+    e.returnValue = message; // Provoque une demande de confirmation (standard)
+    return message; // Provoque une demande de confirmation (certains navigateurs)
+});
+
+/*Modifier le comportement par défaut en cas d'événement
+
+La plupart des événements sont associés à une action par défaut. Le clic sur un lien déclenche la navigation vers la cible de ce lien, le clic avec le bouton droit de la souris affiche un menu contextuel, etc. Il est possible d'annuler ce comportement par défaut en appelant la méthode preventDefault sur l'objet Event.*/
+
+// Gestion du clic sur le lien interdit
+document.getElementById("interdit").addEventListener("click", function (e) {
+    console.log("Continuez plutôt à lire le cours ;)");
+    e.preventDefault(); // Annulation de la navigation vers la cible du lien
+});
