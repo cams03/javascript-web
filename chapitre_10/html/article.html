@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Envoyer des données</title>
+</head>
+
+<body>
+    <h3>Ajout d'un article</h3>
+    <form>
+            <label for="titre">Titre:</label>
+            <input type="text" name="titre" id="titre" required>
+            <br>
+            <label for="contenu">Contenu:</label><br>
+            <textarea name="contenu" id="contenu"></textarea>
+            <br>
+        <input type="submit" value="Ajouter">
+    </form>
+    <div id="resultat"></div>
+
+    <script src="../js/ajax.js"></script>
+    <script src="../js/article.js"></script>
+</body>
+
+</html>
